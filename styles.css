@@ -1,0 +1,77 @@
+/* Make the navbar completely transparent */
+body {
+    background-color: black;
+}
+header.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: transparent !important; /* Ensure transparency */
+    z-index: 10; /* Ensure it stays above the carousel */
+    box-shadow: none; /* Remove any default shadow */
+    border: none; /* Remove any border */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+/* White text for readability */
+header .navbar-brand, 
+header .nav-link {
+    color: #ffffff !important; /* White text */
+}
+
+/* Add padding to the top of the carousel */
+#carouselExampleIndicators {
+    padding-top: 0; /* Adjust based on header height */
+}
+
+/* Optional: Change link colors on hover */
+header .nav-link:hover {
+    color: rgba(255, 255, 255, 0.8) !important; /* Slightly less white on hover */
+}
+
+.carousel-indicators button {
+    color: transparent;
+    border: none;
+    width: 15px !important; 
+    height: 15px !important;
+    border-radius: 50%;
+    border: none;
+    margin: 0 10px !important;
+}
+
+.carousel-inner img {
+    height: 800px; /* Set your desired height */
+    object-fit: cover; /* Ensures images cover the space without distortion */
+    width: 100%; /* Makes sure the image stretches to the width of the carousel */
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    height: 50px;
+    width: 50px;
+}
+
+footer {
+    /* background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0; */
+    margin: 5000px;
+}
+
+
+.booking-section{
+    background-color: white;
+    color: white;
+    text-align: center;
+    padding: 40px 10px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.third-img {
+    object-fit: cover;
+    width: 100%;
+}
