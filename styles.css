@@ -1,6 +1,6 @@
 /* Make the navbar completely transparent */
 body {
-    background-color: black;
+    background-color: rgb(5, 2, 101);
 }
 header.navbar {
     position: absolute;
@@ -54,11 +54,12 @@ header .nav-link:hover {
 }
 
 footer {
-    /* background-color: black;
+    background-color: black;
     color: white;
     text-align: center;
-    padding: 10px 0; */
-    margin: 5000px;
+    padding: 10px 0;
+    margin: 0px;
+    /* margin-top: 100px; */
 }
 
 
@@ -73,5 +74,32 @@ footer {
 
 .third-img {
     object-fit: cover;
+    width: 100%;
+}
+
+h3, p {
+    color: white;
+}
+
+.pikaday-dark {
+	--backgroundColor: #2d3748;
+	/* --textColor: #f7fafc;
+	--currentDateTextColor: #3182ce;
+	--selectedDateBackgroundColor: #3182ce;
+	--selectedDateTextColor: #f7fafc;
+
+	--labelTextColor: #3182ce;
+	--weekDaysTextColor: #a0aec0; */
+
+	background-color: var(--backgroundColor);
+	border-radius: 10px;
+	padding: 0.7rem;
+	z-index: 2000;
+    margin: 6px 0 0 0;
+	box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+	font-family: inherit;
+}
+
+.about-footer{
     width: 100%;
 }

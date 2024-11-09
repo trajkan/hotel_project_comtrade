@@ -1,0 +1,110 @@
+{
+   "rooms":[
+        {
+            "id":1,
+            "name":"Room 1",
+            "price":"100",
+            "description":"This is room 1",
+            "image":"room1.jpg",
+            "maxOccupancy":2,
+            "roomCharacteristics":[
+            "Air conditioning",
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Private bathroom",
+            "Room service",
+            "Breakfast included"
+            ],
+            "bookedDates":[
+               "2024-11-15",
+               "2024-11-16",
+               "2024-11-17"
+            ]
+        },
+         {
+            "id":2,
+            "name":"Room 2",
+            "price":"150",
+            "description":"This is room 2",
+            "image":"room2.jpg",
+            "maxOccupancy":4,
+            "roomCharacteristics":[
+            "Air conditioning",
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Private bathroom",
+            "Room service",
+            "Breakfast included"
+            ],
+            "bookedDates":[
+               "2024-11-15",
+               "2024-11-25",
+               "2024-11-26"
+            ]
+         },
+         {
+            "id":3,
+            "name":"Room 3",
+            "price":"200",
+            "description":"This is room 3",
+            "image":"room3.jpg",
+            "maxOccupancy":4,
+            "roomCharacteristics":[
+            "Air conditioning",
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Private bathroom",
+            "Room service",
+            "Breakfast included"
+            ],
+            "bookedDates":[
+               "2024-11-19",
+               "2024-11-20",
+               "2024-11-21",
+               "2024-11-22"
+            ]
+         },
+         {
+            "id":4,
+            "name":"Room 4",
+            "price":"250",
+            "description":"This is room 4",
+            "image":"room4.jpg",
+            "maxOccupancy":1,
+            "roomCharacteristics":[
+            "Air conditioning",
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Private bathroom",
+            "Room service",
+            "Breakfast included"
+            ],
+            "bookedDates":[
+               "2024-11-15",
+               "2024-11-16",
+               "2024-11-22",
+               "2024-11-23"
+            ]
+         },
+         {
+            "id":5,
+            "name":"Room 5",
+            "price":"300",
+            "description":"This is room 5",
+            "image":"room5.jpg",
+            "maxOccupancy":3,
+            "roomCharacteristics":[
+            "Air conditioning",
+            "Free Wi-Fi",
+            "Flat-screen TV",
+            "Private bathroom",
+            "Room service",
+            "Breakfast included"
+            ],
+            "bookedDates":[
+               "2024-11-10",
+               "2024-11-11"
+            ]
+         }
+   ] 
+}
