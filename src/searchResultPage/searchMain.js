@@ -1,28 +1,33 @@
 import { createCard } from './card.js';
-document.addEventListener('DOMContentLoaded', function() {
+import { filteredRooms } from './filters.js';
+document.addEventListener('DOMContentLoaded', async function() {
 
     const fromDate = sessionStorage.getItem('fromDate');
     const toDate = sessionStorage.getItem('toDate');
     const numPersons = sessionStorage.getItem('numPersons');
-    let rooms = fetchData();
-    console.log('rooms', rooms);
+    let rooms = await fetchData();
+    creatHeader(rooms);
     createCards(rooms);
 
     
 
     async function fetchData(){
-        const imagePath = '../../images/rooms/';
         try{
             const response = await fetch('../../data/rooms.json');
             const result = await response.json();
             const filtRooms = filteredRooms(result.rooms, fromDate, toDate, numPersons);
-            console.log('rooms', filtRooms);
             return filtRooms;
         } catch(err){
             console.error(err);
         }
     }
 
+    function creatHeader(rooms){
+        const header = document.querySelector('header');
+        const h1 = document.createElement('h1');
+        h1.innerText = `Found ${rooms.length} Available Rooms`;
+        header.appendChild(h1);
+    }
     function createCards(rooms){
         const cardContainer = document.querySelector('.card-container');
         rooms.forEach(room => {
@@ -37,10 +42,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-function filteredRooms(rooms, fromDate, toDate, numPersons){
-    const filteredRooms = rooms.filter(room => {
-        return room.maxOccupancy >= numPersons;
-    });
-    return filteredRooms;
-}
+
 
