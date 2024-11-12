@@ -1,110 +1,202 @@
 {
-   "rooms":[
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Room 1",
+      "price": "100",
+      "description": "This cozy room features twin beds with soft pillows and warm blankets, creating a welcoming atmosphere. Wall-mounted reading lamps and a dark wood headboard add modern, rustic charm. An armchair by the window provides a relaxing spot, while natural light enhances the serene ambiance.",
+      "image": "room1.jpg",
+      "maxOccupancy": 2,
+      "bedType": "queensize bed",
+      "roomCharacteristics": {
+        "Air conditioning": "<i class='fa-solid fa-temperature-low'></i>",
+        "Free Wi-Fi": "<i class='fa-solid fa-wifi'></i>",
+        "Flat-screen TV": "<i class='fa-solid fa-tv'></i>",
+        "Private bathroom": "<i class='fa-solid fa-bath'></i>",
+        "Room service": "<i class='fa-solid fa-utensils'></i>",
+        "Breakfast included": "<i class='fa-solid fa-bread-slice'></i>"
+      },
+      "bookedDates": [
+        "15/11/2024",
+        "16/11/2024",
+        "17/11/2024"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Room 2",
+      "price": "150",
+      "description": "This room has a cozy ambiance with twin beds topped with plush pillows and red accent cushions. A warm wooden wall and soft lighting create an inviting feel, while a window offers a scenic view. Thoughtful touches like folded towels and a floor lamp enhance the comfortable atmosphere.",
+      "image": "room2.jpg",
+      "maxOccupancy": 4,
+      "bedType": "2 queensize bed",
+      "roomCharacteristics": {
+        "Air conditioning": "<i class='fa-solid fa-temperature-low'></i>",
+        "Free Wi-Fi": "<i class='fa-solid fa-wifi'></i>",
+        "Flat-screen TV": "<i class='fa-solid fa-tv'></i>",
+        "Private bathroom": "<i class='fa-solid fa-bath'></i>",
+        "Room service": "<i class='fa-solid fa-utensils'></i>",
+        "Breakfast included": "<i class='fa-solid fa-bread-slice'></i>"
+      },
+      "bookedDates": [
+        "15/11/2024",
+        "25/11/2024",
+        "26/11/2024"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Room 3",
+      "price": "200",
+      "description": "This cozy room features twin beds with warm blankets and red accent pillows under a sloped ceiling. A skylight provides natural light, and individual reading lamps add a touch of functionality. Rustic touches like a wooden chair and colorful rugs create a welcoming, cabin-like atmosphere.",
+      "image": "room3.jpg",
+      "maxOccupancy": 4,
+      "bedType": "2 kingsize bed",
+      "roomCharacteristics": {
+        "Air conditioning": "<i class='fa-solid fa-temperature-low'></i>",
+        "Free Wi-Fi": "<i class='fa-solid fa-wifi'></i>",
+        "Flat-screen TV": "<i class='fa-solid fa-tv'></i>",
+        "Private bathroom": "<i class='fa-solid fa-bath'></i>",
+        "Room service": "<i class='fa-solid fa-utensils'></i>",
+        "Breakfast included": "<i class='fa-solid fa-bread-slice'></i>"
+      },
+      "bookedDates": [
+        "19/11/2024",
+        "20/11/2024",
+        "21/11/2024",
+        "22/11/2024"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Room 4",
+      "price": "250",
+      "description": "This is room 4",
+      "image": "room4.jpg",
+      "maxOccupancy": 1,
+      "bedType": "single bed",
+      "roomCharacteristics": {
+        "Air conditioning": "<i class='fa-solid fa-temperature-low'></i>",
+        "Free Wi-Fi": "<i class='fa-solid fa-wifi'></i>",
+        "Flat-screen TV": "<i class='fa-solid fa-tv'></i>",
+        "Private bathroom": "<i class='fa-solid fa-bath'></i>",
+        "Room service": "<i class='fa-solid fa-utensils'></i>",
+        "Breakfast included": "<i class='fa-solid fa-bread-slice'></i>"
+      },
+      "bookedDates": [
+        "15/11/2024",
+        "16/11/2024",
+        "22/11/2024",
+        "23/11/2024"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Room 5",
+      "price": "300",
+      "description": "This is room 5",
+      "image": "room5.jpg",
+      "maxOccupancy": 3,
+      "bedType": "kingsize bed, single bed",
+      "roomCharacteristics": {
+        "Air conditioning": "<i class='fa-solid fa-temperature-low'></i>",
+        "Free Wi-Fi": "<i class='fa-solid fa-wifi'></i>",
+        "Flat-screen TV": "<i class='fa-solid fa-tv'></i>",
+        "Private bathroom": "<i class='fa-solid fa-bath'></i>",
+        "Room service": "<i class='fa-solid fa-utensils'></i>",
+        "Breakfast included": "<i class='fa-solid fa-bread-slice'></i>"
+      },
+      "bookedDates": [
+        "10/11/2024",
+        "11/11/2024"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Admin",
+      "lastName": "Admin",
+      "email": "admin@admin.com",
+      "password": "admin",
+      "bookings": [
         {
-            "id":1,
-            "name":"Room 1",
-            "price":"100",
-            "description":"This is room 1",
-            "image":"room1.jpg",
-            "maxOccupancy":2,
-            "roomCharacteristics":[
-            "Air conditioning",
-            "Free Wi-Fi",
-            "Flat-screen TV",
-            "Private bathroom",
-            "Room service",
-            "Breakfast included"
-            ],
-            "bookedDates":[
-               "15/11/2024",
-               "16/11/2024",
-               "17/11/2024"
-            ]
+          "roomId": 2,
+          "roomName": "Room 2",
+          "bookedDates": [
+            "15/11/2024"
+          ]
         },
-         {
-            "id":2,
-            "name":"Room 2",
-            "price":"150",
-            "description":"This is room 2",
-            "image":"room2.jpg",
-            "maxOccupancy":4,
-            "roomCharacteristics":[
-            "Air conditioning",
-            "Free Wi-Fi",
-            "Flat-screen TV",
-            "Private bathroom",
-            "Room service",
-            "Breakfast included"
-            ],
-            "bookedDates":[
-               "15/11/2024",
-               "25/11/2024",
-               "26/11/2024"
-            ]
-         },
-         {
-            "id":3,
-            "name":"Room 3",
-            "price":"200",
-            "description":"This is room 3",
-            "image":"room3.jpg",
-            "maxOccupancy":4,
-            "roomCharacteristics":[
-            "Air conditioning",
-            "Free Wi-Fi",
-            "Flat-screen TV",
-            "Private bathroom",
-            "Room service",
-            "Breakfast included"
-            ],
-            "bookedDates":[
-               "19/11/2024",
-               "20/11/2024",
-               "21/11/2024",
-               "22/11/2024"
-            ]
-         },
-         {
-            "id":4,
-            "name":"Room 4",
-            "price":"250",
-            "description":"This is room 4",
-            "image":"room4.jpg",
-            "maxOccupancy":1,
-            "roomCharacteristics":[
-            "Air conditioning",
-            "Free Wi-Fi",
-            "Flat-screen TV",
-            "Private bathroom",
-            "Room service",
-            "Breakfast included"
-            ],
-            "bookedDates":[
-               "15/11/2024",
-               "16/11/2024",
-               "22/11/2024",
-               "23/11/2024"
-            ]
-         },
-         {
-            "id":5,
-            "name":"Room 5",
-            "price":"300",
-            "description":"This is room 5",
-            "image":"room5.jpg",
-            "maxOccupancy":3,
-            "roomCharacteristics":[
-            "Air conditioning",
-            "Free Wi-Fi",
-            "Flat-screen TV",
-            "Private bathroom",
-            "Room service",
-            "Breakfast included"
-            ],
-            "bookedDates":[
-               "10/11/2024",
-               "11/11/2024"
-            ]
-         }
-   ] 
+        {
+          "roomId": 5,
+          "roomName": "Room 5",
+          "bookedDates": [
+            "10/11/2024",
+            "11/11/2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "johndoe@example.com",
+      "password": "hashedPassword123",
+      "bookings": [
+        {
+          "roomId": 1,
+          "roomName": "Room 4",
+          "bookedDates": [
+            "15/11/2024",
+            "16/11/2024"
+          ]
+        },
+        {
+          "roomId": 2,
+          "roomName": "Room 2",
+          "bookedDates": [
+            "25/11/2024",
+            "26/11/2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "email": "johndoe@example.com",
+      "password": "hashedPassword123",
+      "bookings": [
+        {
+          "roomId": 1,
+          "roomName": "Room 1",
+          "bookedDates": [
+            "15/11/2024",
+            "16/11/2024",
+            "17/11/2024"
+          ]
+        },
+        {
+          "roomId": 3,
+          "roomName": "Room 3",
+          "bookedDates": [
+            "19/11/2024",
+            "20/11/2024",
+            "21/11/2024",
+            "22/11/2024"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c215",
+      "firstName": "Sasa",
+      "lastName": "Trajkovic",
+      "email": "trajkan@gmail.com",
+      "password": "123456",
+      "bookings": []
+    }
+  ]
 }

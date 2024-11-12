@@ -1,26 +1,14 @@
 import { createCard } from './card.js';
-import { filteredRooms } from './filters.js';
+import { fetchData } from '../api/search.js';
+
 document.addEventListener('DOMContentLoaded', async function() {
 
     const fromDate = sessionStorage.getItem('fromDate');
     const toDate = sessionStorage.getItem('toDate');
     const numPersons = sessionStorage.getItem('numPersons');
-    let rooms = await fetchData();
+    let rooms = await fetchData(fromDate, toDate, numPersons);
     creatHeader(rooms);
     createCards(rooms);
-
-    
-
-    async function fetchData(){
-        try{
-            const response = await fetch('../../data/rooms.json');
-            const result = await response.json();
-            const filtRooms = filteredRooms(result.rooms, fromDate, toDate, numPersons);
-            return filtRooms;
-        } catch(err){
-            console.error(err);
-        }
-    }
 
     function creatHeader(rooms){
         const header = document.querySelector('header');
@@ -35,8 +23,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             cardContainer.appendChild(card);
         });
     }
-
-
 });
 
 

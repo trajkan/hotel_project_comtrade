@@ -1,25 +1,51 @@
 /* Make the navbar completely transparent */
 body {
     background-color: rgb(5, 2, 101);
+    font-family: Lato, Roboto, sans-serif !important;
+}
+/* header.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: transparent !important;
+    z-index: 10;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 50px;
+    margin-top: 50px;
+} */
+
+header {
+    background-color: rgb(5, 2, 101) !important;
+    color: white !important;
 }
 header.navbar {
     position: absolute;
     top: 0;
     width: 100%;
-    background: transparent !important; /* Ensure transparency */
-    z-index: 10; /* Ensure it stays above the carousel */
-    box-shadow: none; /* Remove any default shadow */
-    border: none; /* Remove any border */
-    padding: 0; /* Remove any padding */
-    margin: 0; /* Remove any margin */
-    margin-left: 50px;
-    margin-top: 50px;
+    background-color: rgb(5, 2, 101) !important;
+    z-index: 10;
+    box-shadow: none;
+    border: none;
+    padding: 20px;
+    margin: 0;
 }
 
-/* White text for readability */
-header .navbar-brand, 
+header .navbar-brand {
+    color: #ffffff !important;
+}
+
 header .nav-link {
     color: #ffffff !important; /* White text */
+}
+
+header .nav-link.sign-in, #signOutElement {
+    margin-left: auto;
+    color: #ffffff !important; /* White text */
+    text-decoration: none;
+    
 }
 
 /* Add padding to the top of the carousel */
@@ -104,22 +130,6 @@ h3, p {
     width: 100%;
 }
 
-.card-body{
-    background-color: #2d3748;
-    color: white;
-    border-radius: 10px;
-
-}
-.card-body img{
-    width: 50%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-header{
-    background-color: #2d3748;
-    color: white;
-    border-radius: 10px;
-    text-align: center;
+p.mb-1 {
+    color: black !important;
 }

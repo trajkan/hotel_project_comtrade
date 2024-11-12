@@ -17,7 +17,6 @@ export function addSearchButtonListener() {
         const fromDate = document.getElementById('fromDate').value;
         const toDate = document.getElementById('toDate').value;
         const numPersons = numPersonsInput.value;
-        //här ska vi lägga till en filterfunktoin utifrån variablerna/sökorden ovan
         sessionStorage.setItem('fromDate', fromDate);
         sessionStorage.setItem('toDate', toDate);
         sessionStorage.setItem('numPersons', numPersons);

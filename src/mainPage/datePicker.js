@@ -32,7 +32,6 @@ export function initializeDateInput() {
         minDate: tomorrow,
         theme: 'pikaday-dark',
         onSelect: function(date) {
-            console.log('mindate',this._o.minDate);
             const selectedDate = this.getDate();
             toDateInput.value = formatDate(selectedDate);
             updateEndDate(selectedDate);
