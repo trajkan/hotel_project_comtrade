@@ -27,7 +27,6 @@ export function createCard(data) {
     </div>
   `;
 
-  // Add event listener to calculate total cost
   const totalCostDiv = card.querySelector('.total-cost');
   const fromDate = new Date(sessionStorage.getItem('fromDate'));
   const toDate = new Date(sessionStorage.getItem('toDate'));
@@ -49,7 +48,6 @@ export function createCard(data) {
 
   return card;
 }
-
 
 function showMoreInfo(card, data, moreInfoLink) {
   const moreInfoDiv = document.createElement('div');

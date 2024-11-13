@@ -3,7 +3,6 @@ export function validateSignInForm() {
     const password = document.getElementById('password-sign-in');
     let valid = true;
 
-    // Email validation
     if (!email.value || !email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
         email.classList.add('is-invalid');
         valid = false;
@@ -11,7 +10,6 @@ export function validateSignInForm() {
         email.classList.remove('is-invalid');
     }
 
-    // Password validation
     if (!password.value) {
         password.classList.add('is-invalid');
         valid = false;
@@ -30,7 +28,6 @@ export function validateSignUpForm() {
     const confirmPassword = document.getElementById('confirmPassword');
     let isValid = true;
 
-    // First name and last name validation
     if (!firstName.value) {
         firstName.classList.add('is-invalid');
         isValid = false;
@@ -45,7 +42,6 @@ export function validateSignUpForm() {
         lastName.classList.remove('is-invalid');
     }
 
-    // Email validation
     if (!email.value || !email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
         email.classList.add('is-invalid');
         isValid = false;
@@ -53,7 +49,6 @@ export function validateSignUpForm() {
         email.classList.remove('is-invalid');
     }
 
-    // Password validation
     if (!password.value) {
         console.log('Password is empty', password.value);
         password.classList.add('is-invalid');
@@ -68,7 +63,6 @@ export function validateSignUpForm() {
         password.nextElementSibling.textContent = ''; // Clear any previous error message
     }
 
-    // Confirm password validation
     if (password.value !== confirmPassword.value) {
         confirmPassword.classList.add('is-invalid');
         isValid = false;

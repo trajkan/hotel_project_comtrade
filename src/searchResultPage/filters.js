@@ -1,6 +1,5 @@
 export function filteredRooms(rooms, fromDate, toDate, numPersons){
     let filteredRooms = rooms;
-    // filteredRooms = filterByOccupancy(filteredRooms, numPersons);
     filteredRooms = filterByDate(filteredRooms, fromDate, toDate);
     return filteredRooms;
 }
@@ -8,7 +7,7 @@ export function filteredRooms(rooms, fromDate, toDate, numPersons){
 function filterByDate(rooms, fromDate, toDate){
     const filteredRooms = rooms.filter(room => {
         return room.bookedDates.every(date => {
-            return date < fromDate || date > toDate; // Compare dates as strings
+            return date < fromDate || date > toDate;
         });
     });
     return filteredRooms;

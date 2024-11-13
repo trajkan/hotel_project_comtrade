@@ -8,7 +8,6 @@ export function initializeDateInput() {
     let tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
 
-    // Initialize the From Date picker
     const fromDatePicker = new Pikaday({
         field: fromDateInput,
         format: 'YYYY-MM-DD',
@@ -24,7 +23,6 @@ export function initializeDateInput() {
         }
     });
 
-    // Initialize the To Date picker
     const toDatePicker = new Pikaday({
         field: toDateInput,
         format: 'YYYY-MM-DD',
@@ -44,11 +42,9 @@ export function initializeDateInput() {
     fromDateInput.value = formatDate(fromDatePicker.getDate());
     toDateInput.value = formatDate(toDatePicker.getDate());
 
-    // Update Start Date
     function updateStartDate(selectedDate) {
         fromDatePicker.setStartRange(selectedDate);
         toDatePicker.setStartRange(selectedDate);
-        // toDatePicker.setMinDate(selectedDate);
 
         const nextDay = new Date(selectedDate);
         nextDay.setDate(nextDay.getDate() + 1);
@@ -60,24 +56,9 @@ export function initializeDateInput() {
         }
     }
 
-    // Update End Date
     function updateEndDate(selectedDate) {
         fromDatePicker.setEndRange(selectedDate);
         fromDatePicker.setMaxDate(selectedDate);
         toDatePicker.setEndRange(selectedDate);
     }
 }
-
-// function formatDate(date) {
-//     const day = String(date.getDate()).padStart(2, '0');
-//     const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based
-//     const year = date.getFullYear();
-//     return `${day}/${month}/${year}`;
-// }
-
-// function formatDate(date) {
-//     const year = date.getFullYear();
-//     const month = String(date.getMonth() + 1).padStart(2, '0');
-//     const day = String(date.getDate()).padStart(2, '0');
-//     return `${year}-${month}-${day}`;
-// }

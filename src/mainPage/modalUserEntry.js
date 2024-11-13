@@ -5,22 +5,19 @@ import { createModal } from '../utils/baseModal.js';
 export function initializeSignInOut() {
     const signInElement = document.getElementById('signInElement');
     const signOutElement = document.getElementById('signOutElement');
-    console.log('Sign-in element:', signInElement);
-    console.log('Sign-out element:', signOutElement);
 
     if (signInElement) {
         signInElement.addEventListener('click', (event) => {
             event.preventDefault();
-            signInModal(); // Open the sign-in modal
+            signInModal();
         });
     }
 
     if (signOutElement) {
         signOutElement.addEventListener('click', (event) => {
             event.preventDefault();
-            sessionStorage.removeItem('currentUser'); // Sign out the user
-            toggleSignInOut(); // Update visibility
-            console.log('User signed out successfully');
+            sessionStorage.removeItem('currentUser');
+            toggleSignInOut();
         });
     }
 }
@@ -42,14 +39,12 @@ export function toggleSignInOut() {
 }
 
 function signInModal() {
-    // Close any existing sign-in modal before opening a new one
     const existingSignInModal = document.getElementById('signInModal');
     if (existingSignInModal) {
         const closeButton = existingSignInModal.querySelector('.btn-close');
         if (closeButton) closeButton.click();
     }
 
-    // Create and show the sign-in modal
     createModal({
         id: 'signInModal',
         title: 'Sign In',
@@ -97,14 +92,13 @@ function signInModal() {
                         const errorMessage = document.getElementById('signInErrorMessage');
                         if (errorMessage) {
                             errorMessage.textContent = result.message;
-                            errorMessage.classList.remove('d-none');  // Make sure it's visible
+                            errorMessage.classList.remove('d-none');
                         }
                     }
                 } else {
                     console.log('Sign-in form validation failed');
                 }
             });
-            // Attach the sign-up listener after the modal is shown
             const signUpLink = document.getElementById('signUpLink');
             signUpLink.addEventListener('click', function(event) {
                 event.preventDefault();
@@ -115,14 +109,12 @@ function signInModal() {
 }
 
 function signUpModal() {
-    // Close the sign-in modal before opening the sign-up modal
     const signInModal = document.getElementById('signInModal');
     if (signInModal) {
         const closeButton = signInModal.querySelector('.btn-close');
         if (closeButton) closeButton.click();
     }
 
-    // Create and show the sign-up modal
     createModal({
         id: 'signUpModal',
         title: 'Sign Up',
@@ -160,7 +152,6 @@ function signUpModal() {
                 event.preventDefault();
                 if (validateSignUpForm()) {
                     console.log('Sign-up form validated successfully');
-                    // Submit form or handle success here
                     const userData = {
                         firstName: document.getElementById('firstName').value,
                         lastName: document.getElementById('lastName').value,
@@ -171,7 +162,6 @@ function signUpModal() {
                     const result = await signUpUser(userData);
                     if (result) {
                         console.log('User signed up successfully:', result);
-                        // Proceed with form submission or additional processing
                     } else {
                         console.log('User sign-up failed');
                     }
@@ -179,7 +169,6 @@ function signUpModal() {
                     console.log('Sign-up form validation failed');
                 }
             });
-            // Add the hidden.bs.modal event listener to clean up on close
             const modalElement = document.getElementById('signUpModal');
             modalElement.addEventListener('hidden.bs.modal', function() {
                 modalElement.remove();
@@ -189,38 +178,4 @@ function signUpModal() {
         }
     });
 }
-
-// function createModal({ id, title, bodyContent, footerButtons, onModalShow }) {
-//     // Check if modal already exists
-//     if (!document.getElementById(id)) {
-//         const modalHtml = `
-//             <div class="modal fade" id="${id}" tabindex="-1" aria-labelledby="${id}Label" aria-hidden="true">
-//                 <div class="modal-dialog">
-//                     <div class="modal-content">
-//                         <div class="modal-header">
-//                             <h5 class="modal-title" id="${id}Label">${title}</h5>
-//                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-//                         </div>
-//                         <div class="modal-body">
-//                             ${bodyContent}
-//                         </div>
-//                         <div class="modal-footer">
-//                             ${footerButtons.map(button => `
-//                                 <button type="${button.type}" class="btn ${button.class}" ${button.dataDismiss ? `data-bs-dismiss="${button.dataDismiss}"` : ''} ${button.form ? `form="${button.form}"` : ''}>${button.text}</button>
-//                             `).join('')}
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         `;
-//         document.body.insertAdjacentHTML('beforeend', modalHtml);
-//     }
-
-
-//     const modalElement = document.getElementById(id);
-//     const bootstrapModal = new bootstrap.Modal(modalElement);
-//     bootstrapModal.show();
-
-//     if (onModalShow) onModalShow();
-// }
 

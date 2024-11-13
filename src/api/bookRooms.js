@@ -16,7 +16,6 @@ export async function updateRoomAndGuests(roomDetails, dates) {
         body: JSON.stringify({ bookedDates: updatedBookedDates})
     });
 
-    // Add the guest data to the guests table
     let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
     currentUser = await fetch(`http://localhost:3000/users/${currentUser.id}`).then(response => response.json());
     console.log('Current user:', currentUser);
@@ -25,14 +24,12 @@ export async function updateRoomAndGuests(roomDetails, dates) {
         const userBooking = currentUser.bookings.find(booking => booking.roomId === id);
         if (userBooking) {
             userBooking.bookedDates = [...new Set([...userBooking.bookedDates, ...dates])].sort((a, b) => new Date(a) - new Date(b));
-            console.log('here', userBooking.bookedDates);
         } else {
             currentUser.bookings.push({ 
                 roomId: id,
                 roomName: roomDetails.name,
                 bookedDates: dates.sort((a, b) => new Date(a) - new Date(b))
             });
-            console.log('here2', currentUser.bookings);
         }
 
         await fetch(`http://localhost:3000/users/${currentUser.id}`, {
