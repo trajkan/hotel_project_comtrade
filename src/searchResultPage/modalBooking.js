@@ -1,15 +1,17 @@
 import { createModal } from '../utils/baseModal.js';
+import { formatDate } from '../utils/helpers.js';
+import { updateRoomAndGuests } from '../api/bookRooms.js';
 
 // let confirmButton;
 
 export function handleBookNowClick(roomData) {
     // Assuming `room` contains the room details (e.g., name, price, etc.)
-    const { name, price, description, image, bookedDates } = roomData;
+    const { id, name, price, description, image, bookedDates } = roomData;
     const fromDate = sessionStorage.getItem('fromDate');
     const toDate = sessionStorage.getItem('toDate');
     const totalCost = sessionStorage.getItem('totalCost');
        // Open the booking modal with the room's details
-    createBookingModal({name,image, fromDate, toDate, totalCost});
+    createBookingModal({id, name, image, bookedDates, fromDate, toDate, totalCost});
 }
 
 function createBookingModal(roomDetails) {
@@ -72,59 +74,27 @@ async function handleConfirmBooking(roomDetails) {
     console.log('All dates in range:', allDatesInRange);
 
     // Update the server with the booking
-    // await updateRoomAndGuests(roomDetails, allDatesInRange);
+    await updateRoomAndGuests(roomDetails, allDatesInRange);
 
     // Close the modal after booking
     const modal = document.getElementById('bookingModal');
     const bootstrapModal = bootstrap.Modal.getInstance(modal);
     if (bootstrapModal) bootstrapModal.hide();
+
 }
 
-
 function getDatesInRange(fromDate, toDate) {
-    // Parse dates from the `dd/mm/yyyy` format
-    const parseDate = (dateString) => {
-        const [day, month, year] = dateString.split('/').map(Number);
-        return new Date(year, month - 1, day);  // JavaScript Date months are 0-indexed
-    };
-
-    const start = parseDate(fromDate);
-    const end = parseDate(toDate);
+    // Directly create Date objects from the YYYY-MM-DD strings
+    const start = new Date(fromDate);
+    const end = new Date(toDate);
     const dateRange = [];
 
     // Generate dates from start to end
     for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
-        dateRange.push(new Date(d));
+        dateRange.push(formatDate(d));
     }
-
     return dateRange;
 }
 
 
 
-// async function updateRoomAndGuests(roomDetails, dates) {
-//     const { id } = roomDetails;
-
-//     // Update the room's booked dates
-//     await fetch(`https://your-json-server.com/rooms/${id}`, {
-//         method: 'PATCH',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({ bookedDates: [...roomDetails.bookedDates, ...dates] })
-//     });
-
-//     // Add the guest data to the guests table
-//     const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-//     if (currentUser) {
-//         const guestBooking = {
-//             userId: currentUser.id,
-//             roomId: id,
-//             bookedDates: dates
-//         };
-
-//         await fetch('https://your-json-server.com/guests', {
-//             method: 'POST',
-//             headers: { 'Content-Type': 'application/json' },
-//             body: JSON.stringify(guestBooking)
-//         });
-//     }
-// }

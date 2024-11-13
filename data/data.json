@@ -1,7 +1,7 @@
 {
   "rooms": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Room 1",
       "price": "100",
       "description": "This cozy room features twin beds with soft pillows and warm blankets, creating a welcoming atmosphere. Wall-mounted reading lamps and a dark wood headboard add modern, rustic charm. An armchair by the window provides a relaxing spot, while natural light enhances the serene ambiance.",
@@ -17,13 +17,13 @@
         "Breakfast included": "<i class='fa-solid fa-bread-slice'></i>"
       },
       "bookedDates": [
-        "15/11/2024",
-        "16/11/2024",
-        "17/11/2024"
+        "2024-11-15",
+        "2024-11-16",
+        "2024-11-17"
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Room 2",
       "price": "150",
       "description": "This room has a cozy ambiance with twin beds topped with plush pillows and red accent cushions. A warm wooden wall and soft lighting create an inviting feel, while a window offers a scenic view. Thoughtful touches like folded towels and a floor lamp enhance the comfortable atmosphere.",
@@ -39,13 +39,13 @@
         "Breakfast included": "<i class='fa-solid fa-bread-slice'></i>"
       },
       "bookedDates": [
-        "15/11/2024",
-        "25/11/2024",
-        "26/11/2024"
+        "2024-11-15",
+        "2024-11-25",
+        "2024-11-26"
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Room 3",
       "price": "200",
       "description": "This cozy room features twin beds with warm blankets and red accent pillows under a sloped ceiling. A skylight provides natural light, and individual reading lamps add a touch of functionality. Rustic touches like a wooden chair and colorful rugs create a welcoming, cabin-like atmosphere.",
@@ -61,14 +61,14 @@
         "Breakfast included": "<i class='fa-solid fa-bread-slice'></i>"
       },
       "bookedDates": [
-        "19/11/2024",
-        "20/11/2024",
-        "21/11/2024",
-        "22/11/2024"
+        "2024-11-19",
+        "2024-11-20",
+        "2024-11-21",
+        "2024-11-22"
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Room 4",
       "price": "250",
       "description": "This is room 4",
@@ -84,14 +84,14 @@
         "Breakfast included": "<i class='fa-solid fa-bread-slice'></i>"
       },
       "bookedDates": [
-        "15/11/2024",
-        "16/11/2024",
-        "22/11/2024",
-        "23/11/2024"
+        "2024-11-15",
+        "2024-11-16",
+        "2024-11-22",
+        "2024-11-23"
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Room 5",
       "price": "300",
       "description": "This is room 5",
@@ -107,14 +107,14 @@
         "Breakfast included": "<i class='fa-solid fa-bread-slice'></i>"
       },
       "bookedDates": [
-        "10/11/2024",
-        "11/11/2024"
+        "2024-11-10",
+        "2024-11-11"
       ]
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "firstName": "Admin",
       "lastName": "Admin",
       "email": "admin@admin.com",
@@ -124,21 +124,21 @@
           "roomId": 2,
           "roomName": "Room 2",
           "bookedDates": [
-            "15/11/2024"
+            "2024-11-15"
           ]
         },
         {
           "roomId": 5,
           "roomName": "Room 5",
           "bookedDates": [
-            "10/11/2024",
-            "11/11/2024"
+            "2024-11-10",
+            "2024-11-11"
           ]
         }
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "firstName": "John",
       "lastName": "Doe",
       "email": "johndoe@example.com",
@@ -148,22 +148,22 @@
           "roomId": 1,
           "roomName": "Room 4",
           "bookedDates": [
-            "15/11/2024",
-            "16/11/2024"
+            "2024-11-15",
+            "2024-11-16"
           ]
         },
         {
           "roomId": 2,
           "roomName": "Room 2",
           "bookedDates": [
-            "25/11/2024",
-            "26/11/2024"
+            "2024-11-25",
+            "2024-11-26"
           ]
         }
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "firstName": "Jane",
       "lastName": "Doe",
       "email": "johndoe@example.com",
@@ -173,19 +173,19 @@
           "roomId": 1,
           "roomName": "Room 1",
           "bookedDates": [
-            "15/11/2024",
-            "16/11/2024",
-            "17/11/2024"
+            "2024-11-15",
+            "2024-11-16",
+            "2024-11-17"
           ]
         },
         {
           "roomId": 3,
           "roomName": "Room 3",
           "bookedDates": [
-            "19/11/2024",
-            "20/11/2024",
-            "21/11/2024",
-            "22/11/2024"
+            "2024-11-19",
+            "2024-11-20",
+            "2024-11-21",
+            "2024-11-22"
           ]
         }
       ]
@@ -196,7 +196,9 @@
       "lastName": "Trajkovic",
       "email": "trajkan@gmail.com",
       "password": "123456",
-      "bookings": []
+      "bookings": [
+
+      ]
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { formatDate } from '../utils/helpers.js';
 
 export function initializeDateInput() {
     const fromDateInput = document.getElementById('fromDate');
@@ -10,7 +11,7 @@ export function initializeDateInput() {
     // Initialize the From Date picker
     const fromDatePicker = new Pikaday({
         field: fromDateInput,
-        format: 'DD/MM/YYYY',
+        format: 'YYYY-MM-DD',
         defaultDate: today,
         setDefaultDate: true,
         minDate: today,
@@ -26,7 +27,7 @@ export function initializeDateInput() {
     // Initialize the To Date picker
     const toDatePicker = new Pikaday({
         field: toDateInput,
-        format: 'DD/MM/YYYY',
+        format: 'YYYY-MM-DD',
         defaultDate: tomorrow,
         setDefaultDate: true,
         minDate: tomorrow,
@@ -67,9 +68,16 @@ export function initializeDateInput() {
     }
 }
 
-function formatDate(date) {
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-}
+// function formatDate(date) {
+//     const day = String(date.getDate()).padStart(2, '0');
+//     const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+//     const year = date.getFullYear();
+//     return `${day}/${month}/${year}`;
+// }
+
+// function formatDate(date) {
+//     const year = date.getFullYear();
+//     const month = String(date.getMonth() + 1).padStart(2, '0');
+//     const day = String(date.getDate()).padStart(2, '0');
+//     return `${year}-${month}-${day}`;
+// }

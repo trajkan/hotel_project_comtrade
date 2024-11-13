@@ -1,4 +1,4 @@
-import { parseDate } from './filters.js';
+// import { parseDate } from './filters.js';
 import { handleBookNowClick } from './modalBooking.js';
 
 export function createCard(data) {
@@ -29,8 +29,8 @@ export function createCard(data) {
 
   // Add event listener to calculate total cost
   const totalCostDiv = card.querySelector('.total-cost');
-  const fromDate = parseDate(sessionStorage.getItem('fromDate'));
-  const toDate = parseDate(sessionStorage.getItem('toDate'));
+  const fromDate = new Date(sessionStorage.getItem('fromDate'));
+  const toDate = new Date(sessionStorage.getItem('toDate'));
   const numDays = Math.ceil((toDate - fromDate) / (1000 * 60 * 60 * 24));
   const totalCost = numDays * data.price;
   totalCostDiv.textContent = `Total Cost: $${totalCost}`;
@@ -50,10 +50,6 @@ export function createCard(data) {
   return card;
 }
 
-// function parseDate(dateString) {
-//   const [day, month, year] = dateString.split('/').map(Number);
-//   return new Date(year, month - 1, day); // month is 0-based in JavaScript Date
-// }
 
 function showMoreInfo(card, data, moreInfoLink) {
   const moreInfoDiv = document.createElement('div');

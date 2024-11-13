@@ -16,6 +16,7 @@ export function addSearchButtonListener() {
 
         const fromDate = document.getElementById('fromDate').value;
         const toDate = document.getElementById('toDate').value;
+
         const numPersons = numPersonsInput.value;
         sessionStorage.setItem('fromDate', fromDate);
         sessionStorage.setItem('toDate', toDate);
