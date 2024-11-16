@@ -133,3 +133,14 @@ h3, p {
 p.mb-1 {
     color: black !important;
 }
+
+#profileIconButton {
+    color: white;
+    background-color: transparent;
+    border: none;
+    padding-right: 10px;
+}
+
+#profileModal p {
+    color: black !important;
+}

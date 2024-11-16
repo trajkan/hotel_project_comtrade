@@ -1,6 +1,7 @@
 import { validateSignInForm, validateSignUpForm } from './validation.js';
 import { signUpUser, signInUser } from '../api/auth.js';
 import { createModal } from '../utils/baseModal.js';
+import { updateProfileIcon } from './profileModal.js';
 
 export function initializeSignInOut() {
     const signInElement = document.getElementById('signInElement');
@@ -18,6 +19,7 @@ export function initializeSignInOut() {
             event.preventDefault();
             sessionStorage.removeItem('currentUser');
             toggleSignInOut();
+            updateProfileIcon();
         });
     }
 }
@@ -36,13 +38,17 @@ export function toggleSignInOut() {
             signOutElement.classList.add('d-none');
         }
     }
+    updateProfileIcon();
 }
 
 function signInModal() {
     const existingSignInModal = document.getElementById('signInModal');
     if (existingSignInModal) {
-        const closeButton = existingSignInModal.querySelector('.btn-close');
-        if (closeButton) closeButton.click();
+        // const closeButton = existingSignInModal.querySelector('.btn-close');
+        // if (closeButton) closeButton.click();
+        existingSignInModal.remove();
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) backdrop.remove();
     }
 
     createModal({
@@ -85,6 +91,7 @@ function signInModal() {
                         console.log('User signed in successfully:', result.user);
                         sessionStorage.setItem("currentUser", JSON.stringify(result.user));
                         toggleSignInOut();
+                        updateProfileIcon();
                         const bootstrapModal = bootstrap.Modal.getInstance(document.getElementById('signInModal'));
                         bootstrapModal.hide();
                     } else {

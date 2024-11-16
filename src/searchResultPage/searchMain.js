@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     let rooms = await fetchData(fromDate, toDate, numPersons);
     creatHeader(rooms);
     createCards(rooms);
+    updateBookNowButtons();
 
     function creatHeader(rooms){
         const header = document.querySelector('header');
@@ -21,6 +22,25 @@ document.addEventListener('DOMContentLoaded', async function() {
         rooms.forEach(room => {
             const card = createCard(room);
             cardContainer.appendChild(card);
+        });
+    }
+    function updateBookNowButtons() {
+        const currentUser = sessionStorage.getItem('currentUser');
+        const bookNowButtons = document.querySelectorAll('.book-now-btn');
+
+        console.log('Current User:', currentUser);
+        console.log('Book Now Buttons:', bookNowButtons);
+    
+        bookNowButtons.forEach(button => {
+            if (currentUser) {
+                console.log('User is signed in');
+                button.disabled = false;
+                button.textContent = 'Book Now';
+            } else {
+                console.log('User is not signed in');
+                button.disabled = true;
+                button.textContent = 'Sign in to book';
+            }
         });
     }
 });
