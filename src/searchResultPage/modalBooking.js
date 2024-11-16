@@ -1,7 +1,7 @@
 import { createModal } from '../utils/baseModal.js';
 import { formatDate } from '../utils/helpers.js';
 import { updateRoomAndGuests } from '../api/bookRooms.js';
-PublicKeyCredential,k.jnhb 
+
 
 export function handleBookNowClick(roomData) {
     const { id, name, price, description, image, bookedDates } = roomData;
