@@ -1,6 +1,9 @@
 body {
     background-color: rgb(5, 2, 101) !important;
     font-family: Lato, Roboto, sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header{
@@ -9,6 +12,17 @@ header{
     border-radius: 10px;
     text-align: center;
     margin: 16px;
+    width: 75%;
+}
+
+
+
+.card-container {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .card {
@@ -21,6 +35,7 @@ header{
     overflow: hidden;
     margin: 16px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 75%;
 }
 
 .card-body {
@@ -37,7 +52,7 @@ header{
     height: auto;
     object-fit: cover;
     display: block;
-    padding: 10px;
+    padding-top: 16px;
 }
 
 .card-info {
@@ -95,7 +110,7 @@ header{
 
 .card-info .total-cost {
     /* margin-top: 8px; */
-    margin-right: 8px;
+    /* margin-right: 8px; */
     font-weight: bold;
     color: white;
     border: 1px solid white;
@@ -107,19 +122,21 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30px;
+    height: 50px;
+    text-align: center;
   }
   
 .card-info .book-now-btn {
-    align-self: flex-end;
     height: 50px;
-    width: 200px;
+    width: 150px;
     font-size: large;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
     border-radius: 5px;
     background-color: #c1d2e4;
     cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;;
 
 }
 
@@ -174,4 +191,80 @@ header{
 
 .characteristic .text {
     font-size: 14px;
+}
+
+/* iPad type of screens (width between 700px and 1024px) */
+@media (min-width: 700px) and (max-width: 1024px) {
+    /* .card-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+    .cost-and-button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: 100%;
+        border: 1px dashed red;
+    }
+    .cost-and-button .details {
+        display: grid;
+        font-size: 12px;
+        text-align: center;
+    }
+    .cost-and-button .total-cost {
+        font-size: 12px;
+    }
+    .cost-and-button .book-now-btn {
+        font-size: 14px;
+        transform: scale(0.8);
+    }
+}
+
+/* Mobile phones (width less than 700px) */
+@media (max-width: 700px) {
+    .card-body {
+        flex-direction: column;
+        align-items: center;
+    }
+    /* .card-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+    .card-info {
+        margin: 0;
+        text-align: center;
+    }
+
+    .card-info p{
+        padding: 16px 8px;
+    }
+
+    .cost-and-button {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 10px;
+        /* height: 100%; */
+        width: 100%;
+        border: 1px dashed red;
+    }
+    .cost-and-button .details {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+    .cost-and-button .total-cost {
+        font-size: 12px;
+    }
+    .cost-and-button .book-now-btn {
+        font-size: 14px;
+        transform: scale(0.8);
+    }
 }

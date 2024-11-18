@@ -1,6 +1,7 @@
 export function filteredRooms(rooms, fromDate, toDate, numPersons){
     let filteredRooms = rooms;
     filteredRooms = filterByDate(filteredRooms, fromDate, toDate);
+    filteredRooms = filterByOccupancy(filteredRooms, numPersons);
     return filteredRooms;
 }
 

@@ -36,7 +36,7 @@ export function createCard(data) {
 
   const moreInfoLink = card.querySelector('.more-info');
   moreInfoLink.addEventListener('click', (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     showMoreInfo(card, data, moreInfoLink);
   });
 
@@ -61,7 +61,7 @@ function showMoreInfo(card, data, moreInfoLink) {
     `;
   }).join('');
   moreInfoDiv.innerHTML = `
-    <span class="close-btn">&times;</span>
+    <span class="close-btn">&times</span>
     <div class="more-info-content">
       <h3>Additional Information</h3>
       <div class="characteristics-grid">

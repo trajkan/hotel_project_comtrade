@@ -40,6 +40,8 @@
       },
       "bookedDates": [
         "2024-11-15",
+        "2024-11-17",
+        "2024-11-18",
         "2024-11-25",
         "2024-11-26"
       ]
@@ -121,14 +123,14 @@
       "password": "admin",
       "bookings": [
         {
-          "roomId": 2,
+          "roomId": "2",
           "roomName": "Room 2",
           "bookedDates": [
             "2024-11-15"
           ]
         },
         {
-          "roomId": 5,
+          "roomId": "5",
           "roomName": "Room 5",
           "bookedDates": [
             "2024-11-10",
@@ -145,7 +147,7 @@
       "password": "hashedPassword123",
       "bookings": [
         {
-          "roomId": 1,
+          "roomId": "1",
           "roomName": "Room 4",
           "bookedDates": [
             "2024-11-15",
@@ -153,7 +155,7 @@
           ]
         },
         {
-          "roomId": 2,
+          "roomId": "2",
           "roomName": "Room 2",
           "bookedDates": [
             "2024-11-25",
@@ -170,7 +172,7 @@
       "password": "hashedPassword123",
       "bookings": [
         {
-          "roomId": 1,
+          "roomId": "1",
           "roomName": "Room 1",
           "bookedDates": [
             "2024-11-15",
@@ -179,7 +181,7 @@
           ]
         },
         {
-          "roomId": 3,
+          "roomId": "3",
           "roomName": "Room 3",
           "bookedDates": [
             "2024-11-19",
@@ -197,7 +199,14 @@
       "email": "trajkan@gmail.com",
       "password": "123456",
       "bookings": [
-
+        {
+          "roomId": "2",
+          "roomName": "Room 2",
+          "bookedDates": [
+            "2024-11-17",
+            "2024-11-18"
+          ]
+        }
       ]
     }
   ]

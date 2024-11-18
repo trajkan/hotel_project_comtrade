@@ -25,15 +25,14 @@
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
-        <!-- <a class="nav-link" id="signInLink" href="#" data-bs-toggle="modal" data-bs-target="#signInModal">Sign In</a></li> -->
-        <div id="profileIconContainer" style="display: none;">
+        <div id="profileIconContainer">
             <button id="profileIconButton">
                 <i class="fas fa-user"></i> 
             </button>
+            <a href="#" id="signOutElement" class="sign-out-link d-none nav-link">Sign Out</a>
 
         </div>
         <a href="#" id="signInElement" class="nav-link">Sign In</a>
-        <a href="#" id="signOutElement" class="sign-out-link d-none nav-link">Sign Out</a>
 
     </header>
     <div id="carouselExampleIndicators" class="carousel slide">
@@ -62,8 +61,8 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <section class="container mt-5 booking-section">
-        <form class="row g-3 align-items-end">
+    <section id="bookContainer" class="container mt-5 booking-section">
+        <form id="bookForm" class="row g-3 align-items-end">
             <!-- From Date -->
             <div class="col-md-3">
                 <label for="fromDate" class="form-label">From Date</label>
@@ -86,18 +85,18 @@
 
             <!-- Search Button -->
             <div class="col-md-3">
-                <button type="submit" class="btn btn-primary w-100">Search</button>
+                <button type="submit" class="btn btn-primary w-100">Search Rooms</button>
             </div>
         </form>
     </section>
 
-    <div class="container-fluid">
+    <div class="container-fluid img-and-desc">
         <!-- First Row: Image Left, Text Right -->
         <div class="row align-items-center no-gutters">
             <div class="col-md-6 px-0">
                 <img src="images/1.jpg" class="img-fluid" alt="Image 1">
             </div>
-            <div class="col-md-6 ">
+            <div class="col-md-6 img-description">
                 <h3>Your Heading 1</h3>
                 <p>Your descriptive text goes here for the first row.</p>
             </div>
@@ -108,7 +107,7 @@
             <div class="col-md-6 order-md-2 px-0">
                 <img src="images/2.jpg" class="img-fluid" alt="Image 2">
             </div>
-            <div class="col-md-6 order-md-1 px-5">
+            <div class="col-md-6 order-md-1 px-5 img-description">
                 <h3>Your Heading 2</h3>
                 <p>Your descriptive text goes here for the second row.</p>
             </div>
@@ -119,7 +118,7 @@
             <div class="col-md-6 px-0">
                 <img src="images/5.jpg" class="img-fluid third-img" alt="Image 3">
             </div>
-            <div class="col-md-6 px-5">
+            <div class="col-md-6 px-5 img-description">
                 <h3>Your Heading 3</h3>
                 <p>Your descriptive text goes here for the third row.</p>
             </div>
